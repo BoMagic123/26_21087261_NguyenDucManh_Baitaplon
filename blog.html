@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Manh FOOD</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="thongtin.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="short icon" href="image/short_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            display: inline-block;
+            position: relative;
+        }
+        
+        ul li a {
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 16px;
+        }
+        
+        ul li .submenu-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            border: 1px solid #ccc;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        ul li:hover .submenu-list {
+            display: block;
+        }
+        
+        ul li .submenu-list li {
+            display: block;
+        }
+        
+        ul li .submenu-list li a {
+            padding: 10px 20px;
+            color: #333;
+        }
+        
+        ul li .submenu-list li a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        ul li .arrow {
+            font-size: 20px; /* Tăng kích thước mũi tên */
+            margin-left: 5px;
+            transition: transform 0.3s ease-in-out;
+            color: #333; /* Màu mũi tên */
+        }
+        
+        /* Mũi tên chỉ xuống sẽ quay khi hover */
+        ul li:hover .arrow {
+            transform: rotate(180deg);
+        }
+        
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="action">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li class="submenu">
+                <a href="menu.html">Menu <span class="arrow fas fa-chevron-down"></span></a>
+                <ul class="submenu-list">
+                    <li><a href="menu.html">Bánh</a></li>
+                    <li><a href="menu.html">Coffee</a></li>
+                    <li><a href="menu.html">Mỳ tôm</a></li>
+                    <li><a href="menu.html">Sữa</a></li>
+                    <li><a href="menu.html">Hamburger</a></li>
+                </ul>
+            </li>
+            <li><a href="gallerry.html">Trưng bày</a></li>
+            <li class="submenu">
+                <a href="blog.html">Blog-Tin tức<span class="arrow fas fa-chevron-down"></span></a>
+                <ul class="submenu-list">
+                    <li><a href="blog.html">Tin tức sự kiện</a></li>
+                    <li><a href="blog.html">Tin Tức khuyến mãi</a></li>
+                    <li><a href="blog.html">Tin Tức thực phẩm</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="search-container">
+            <form action="search.html" method="GET" class="search-form">
+                <input type="text" placeholder="Tìm kiếm..." name="search" class="search-input">
+                <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        
+        <div class="login">
+            <a href="dangnhap.html">Login</a>
+        </div>
+    </nav>
+
+    <!-- Banner cho trang blog -->
+    <div class="banner_bg">
+        <h1><span>Blog</span> Của Chúng Tôi</h1>
+    </div>
+
+    <div class="blog">
+        <div class="blog_main">
+            <div class="blog_post">
+                <h2>Bài Viết Mới Nhất: 5 Lý Do Bạn Nên Chọn Manh FOOD</h2>
+                <p class="blog_date">Ngày đăng: 15/11/2024</p>
+                <p>Tại Manh FOOD, chúng tôi không chỉ cung cấp những món ăn ngon mà còn chú trọng vào trải nghiệm khách hàng. Dưới đây là 5 lý do tại sao bạn nên thử sản phẩm của chúng tôi ngay hôm nay...</p>
+                <a href="blog.html" class="read-more">Đọc thêm...</a>
+            </div>
+
+            <div class="blog_post">
+                <h2>Chúng Tôi Làm Thế Nào Để Đảm Bảo Chất Lượng Thực Phẩm?</h2>
+                <p class="blog_date">Ngày đăng: 10/11/2024</p>
+                <p>Chất lượng là yếu tố quan trọng nhất đối với chúng tôi. Chúng tôi luôn chọn nguyên liệu tươi ngon nhất và cam kết đáp ứng các tiêu chuẩn vệ sinh an toàn thực phẩm...</p>
+                <a href="blog.html" class="read-more">Đọc thêm...</a>
+            </div>
+
+            <div class="blog_post">
+                <h2>Chế Độ Dinh Dưỡng Cân Bằng: Món Ăn Cho Mọi Lứa Tuổi</h2>
+                <p class="blog_date">Ngày đăng: 01/11/2024</p>
+                <p>Hãy cùng Manh FOOD khám phá các món ăn dinh dưỡng phù hợp với mọi lứa tuổi, từ trẻ nhỏ đến người lớn tuổi. Chúng tôi cung cấp các bữa ăn không chỉ ngon mà còn giàu dinh dưỡng...</p>
+                <a href="blog.html" class="read-more">Đọc thêm...</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer_main">
+            <div class="footer_tag">
+                <h2>Địa Chỉ</h2>
+                <p>Hà Nội</p>
+                <p>TP. Hồ Chí Minh</p>
+                <p>Đà Nẵng</p>
+                <p>Cần Thơ</p>
+                <p>Nha Trang</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Liên Hệ</h2>
+                <p>+84 12 3456 789</p>
+                <p>+84 25 5568 456</p>
+                <p>manhkaka195@gmail.com</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Dịch Vụ</h2>
+                <p>Giao Hàng Nhanh</p>
+                <p>Thanh Toán Dễ Dàng</p>
+                <p>Hỗ Trợ 24/7</p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Chính sách</h2>
+                <p>Chính sách bảo mật</a></p>
+                <p>Điều khoản sử dụng</a></p>
+                <p>Chính sách đổi trả</a></p>
+            </div>
+
+            <div class="footer_tag">
+                <h2>Theo Dõi Chúng Tôi</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+
+        <p class="end"><strong style="font-family: Arial, Helvetica, sans-serif; font-size: 30PX;"><span><i class="fa-solid fa-face-grin"></i> 21087261_NGUYỄN ĐỨC MẠNH</span></strong> </p>
+    </footer>
+</body>
+</html>

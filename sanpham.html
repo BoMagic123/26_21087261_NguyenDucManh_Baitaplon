@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="thongtin.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="short icon" href="image/short_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-size: 16px;
+}
+
+ul li .submenu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+ul li:hover .submenu-list {
+    display: block;
+}
+
+ul li .submenu-list li {
+    display: block;
+}
+
+ul li .submenu-list li a {
+    padding: 10px 20px;
+    color: #333;
+}
+
+ul li .submenu-list li a:hover {
+    background-color: #f1f1f1;
+}
+
+ul li .arrow {
+    font-size: 20px; /* Tăng kích thước mũi tên */
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+    color: #333; /* Màu mũi tên */
+}
+
+/* Mũi tên chỉ xuống sẽ quay khi hover */
+ul li:hover .arrow {
+    transform: rotate(180deg);
+}
+
+    </style>
+</head>
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/logo.png">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="action">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li class="submenu">
+                <a href="menu.html">Menu <span class="arrow fas fa-chevron-down"></span></a>
+                <ul class="submenu-list">
+                    <li><a href="menu.html">Bánh</a></li>
+                    <li><a href="menu.html">Coffee</a></li>
+                    <li><a href="menu.html">Mỳ tôm</a></li>
+                    <li><a href="menu.html">Sữa</a></li>
+                    <li><a href="menu.html">Hamburger</a></li>
+                </ul>
+            </li>
+            <li><a href="gallerry.html">Trưng bày</a></li>
+            <li class="submenu">
+                <a href="blog.html">Blog-Tin tức<span class="arrow fas fa-chevron-down"></span></a>
+                <ul class="submenu-list">
+                    <li><a href="blog.html">Tin tức sự kiện</a></li>
+                    <li><a href="blog.html">Tin Tức khuyến mãi</a></li>
+                    <li><a href="blog.html">Tin Tức thực phẩm</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        
+        
+
+        <div class="search-container">
+            <form action="search.html" method="GET" class="search-form">
+                <input type="text" placeholder="Search..." name="search" class="search-input">
+                <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+    </nav>
+
+
+
+
+
+
+
+    <div class="banner_bg">
+        <h1><span>Menu</span></h1>
+    </div>
+
+
+
+
+
+    <div class="menu">
+
+        <div class="menu_box anim">
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_1.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Hamburger</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">
+                       Hương vị thơm ngon, đậm đà từ thịt bò tươi ngon, tạo nên chiếc bánh hoàn hảo cho bữa ăn của bạn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_2.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Coffee Nâu</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">
+                        Coffee Nâu – Tận hưởng hương vị đậm đà và mượt mà của cà phê nâu.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_3.png">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Pizza</h2>
+                    <p>
+                        Pizza – Đậm đà hương vị từ lớp phô mai tan chảy, tạo nên một chiếc pizza thơm lừng, hấp dẫn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_4.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Onion Ring</h2>
+                    <p>
+                      
+Onion Ring – Những vòng hành giòn tan, vàng ươm, được chiên giòn tuyệt vời, là món ăn vặt hoàn hảo.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_5.webp">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Biryani</h2>
+                    <p>
+                        Biryani – Món cơm ướp gia vị đậm đà, kết hợp cùng thịt gà hoặc thịt cừu, mang đến hương vị tuyệt hảo
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_6.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Potato Chips</h2>
+                    <p>
+                        Potato Chips – Mỏng giòn, thơm ngon, với vị khoai tây tự nhiên và một chút muối, là món ăn vặt lý tưởng.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_7.webp">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Lasagna</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Enim, animi nesciunt magni molestiae
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_8.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Ice-Cream</h2>
+                    <p>
+                        
+Ice-Cream – Mát lạnh, ngọt ngào, với hương vị kem mềm mịn, là món tráng miệng hoàn hảo để giải nhiệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_9.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Chocolate</h2>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Enim, animi nesciunt magni molestiae
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_10.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Pasta</h2>
+                    <p>
+                        Kẹp đầy đủ thịt, rau củ tươi ngon và sốt đặc trưng, đầy đủ dinh dưỡng cho một bữa ăn nhanh gọn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_11.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Starbucks</h2>
+                    <p>
+                        Kẹp đầy đủ thịt, rau củ tươi ngon và sốt đặc trưng, đầy đủ dinh dưỡng cho một bữa ăn nhanh gọn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+            
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_12.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Hot Dog</h2>
+                    <p>
+                        Kẹp đầy đủ thịt, rau củ tươi ngon và sốt đặc trưng, đầy đủ dinh dưỡng cho một bữa ăn nhanh gọn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_13.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Sandwich</h2>
+                    <p>
+                   
+Sandwich – Bánh mì kẹp đầy đủ thịt, rau củ tươi ngon và sốt đặc trưng.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_14.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Muffin</h2>
+                    <p>
+                        Sausage – Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_15.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Sausage</h2>
+                    <p>
+                        Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_16.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Cake</h2>
+                    <p>
+                        Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_17.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Burrito</h2>
+                    <p>
+                        Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_18.webp">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Bacon</h2>
+                    <p>
+                        Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_19.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Donuts</h2>
+                    <p>
+                        Donuts – Những chiếc bánh ngọt mềm mịn, phủ lớp đường hoặc sô cô la, mang đến hương vị ngọt ngào.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_20.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Noodle</h2>
+                    <p>
+                        Noodle – Mì mềm mại, kết hợp với nước dùng đậm đà và các nguyên liệu tươi ngon.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_21.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Pancake</h2>
+                    <p>
+                        Lạp xưởng thơm ngon, giòn mềm, được chế biến từ thịt tươi ngon và gia vị đặc biệt.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_22.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Pretzel</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">
+                        Pretzel – Bánh quy xoắn giòn rụm,  mang đến trải nghiệm vị giác tuyệt vời cho mọi người.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_23.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Taco</h2>
+                    <p>
+                        
+Taco – Vỏ bánh giòn tan, nhân thịt tươi ngon kết hợp với rau củ tươi mát .
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_24.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Kottu</h2>
+                    <p>
+                        Kottu – Món ăn đặc trưng từ Sri Lanka, mang đến hương vị đậm đà, thơm ngon khó quên.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="form.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <footer>
+
+        <div class="footer_main">
+    
+            <div class="footer_tag">
+    
+                <h2>Vị trí</h2>
+                <p>Hà Nội</p>
+                <p>TP. Hồ Chí Minh</p>
+                <p>Đà Nẵng</p>
+                <p>Cần Thơ</p>
+                <p>Nha Trang</p>
+    
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Liên hệ</h2>
+                <p>+84 12 3456 789</p>
+                <p>+84 25 5568 456</p>
+                <p>manhkaka195@gmail.com</p>
+    
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Dịch vụ của chúng tôi</h2>
+                <p>Giao hàng nhanh</p>
+                <p>Thanh toán dễ dàng</p>
+                <p>Hỗ trợ 24/7</p>
+    
+            </div>
+
+            <div class="footer_tag">
+                <h2>Chính sách</h2>
+                <p>Chính sách bảo mật</a></p>
+                <p>Điều khoản sử dụng</a></p>
+                <p>Chính sách đổi trả</a></p>
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Theo dõi chúng tôi</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+    
+            </div>
+    
+    
+        </div>
+    
+        <p class="end"><strong style="font-family: Arial, Helvetica, sans-serif; font-size: 30PX;"><span><i class="fa-solid fa-face-grin"></i> 21087261_NGUYỄN ĐỨC MẠNH</span></strong> </p>
+    
+    </footer>
+    
+    
+</body>
+</html>

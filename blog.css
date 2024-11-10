@@ -1,0 +1,113 @@
+/* Banner cho trang blog */
+.banner_bg {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner_bg h1 {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.banner_bg span {
+    font-weight: bold;
+    color: #e67e22; /* Màu cam cho "Blog" */
+}
+
+/* Các phần blog */
+.blog {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.blog_main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Mỗi bài viết */
+.blog_post {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.blog_post h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.blog_post .blog_date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.blog_post p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.blog_post .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog_post .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+footer .footer_main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer_tag {
+    width: 23%;
+    margin-bottom: 20px;
+}
+
+footer .footer_tag h2 {
+    font-size: 20px;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+footer .footer_tag p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+footer .footer_tag i {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+footer .end {
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 30px;
+}
+footer .end span {
+    color: #e67e22;
+}

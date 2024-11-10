@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="thongtin.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="short icon" href="image/short_icon.png">
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            display: inline-block;
+            position: relative;
+        }
+        
+        ul li a {
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 16px;
+        }
+        
+        ul li .submenu-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            border: 1px solid #ccc;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        ul li:hover .submenu-list {
+            display: block;
+        }
+        
+        ul li .submenu-list li {
+            display: block;
+        }
+        
+        ul li .submenu-list li a {
+            padding: 10px 20px;
+            color: #333;
+        }
+        
+        ul li .submenu-list li a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        ul li .arrow {
+            font-size: 20px; /* Tăng kích thước mũi tên */
+            margin-left: 5px;
+            transition: transform 0.3s ease-in-out;
+            color: #333; /* Màu mũi tên */
+        }
+        
+        /* Mũi tên chỉ xuống sẽ quay khi hover */
+        ul li:hover .arrow {
+            transform: rotate(180deg);
+        }
+        
+            </style>
+</head>
+<body>
+
+    <section id="Home">
+
+        <nav>
+
+            <div class="logo">
+                <a href="index.html"><img src="image/logo.png"></a>
+            </div>
+
+            <ul>
+                <li><a href="index.html" class="action">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="submenu">
+                    <a href="menu.html">Menu <span class="arrow fas fa-chevron-down"></span></a>
+                    <ul class="submenu-list">
+                        <li><a href="menu.html">Bánh</a></li>
+                        <li><a href="menu.html">Coffee</a></li>
+                        <li><a href="menu.html">Mỳ tôm</a></li>
+                        <li><a href="menu.html">Sữa</a></li>
+                        <li><a href="menu.html">Hamburger</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallerry.html">Trưng bày</a></li>
+                <li class="submenu">
+                    <a href="blog.html">Blog-Tin tức<span class="arrow fas fa-chevron-down"></span></a>
+                    <ul class="submenu-list">
+                        <li><a href="blog.html">Tin tức sự kiện</a></li>
+                        <li><a href="blog.html">Tin Tức khuyến mãi</a></li>
+                        <li><a href="blog.html">Tin Tức thực phẩm</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <script>
+                // Giả sử kiểm tra trạng thái đăng nhập thông qua localStorage
+                function checkLogin(event, redirectPage) {
+                    // Kiểm tra trạng thái đăng nhập (Giả sử trạng thái lưu trong localStorage)
+                    var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Cập nhật trạng thái đăng nhập trong localStorage
+            
+                    // Ngừng hành động mặc định (chuyển trang) của thẻ <a>
+                    event.preventDefault();
+            
+                    if (isLoggedIn) {
+                        // Nếu đã đăng nhập, chuyển hướng đến trang được chỉ định
+                        window.location.href = redirectPage;
+                    } else {
+                        // Nếu chưa đăng nhập, hiển thị thông báo và chuyển hướng đến trang đăng nhập
+                        alert("Bạn cần đăng nhập để truy cập Menu!");
+                        window.location.href = "dangnhap.html";
+                    }
+                }
+            </script>
+            
+            
+            
+
+            <div class="search-container">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" placeholder="Search..." name="search" class="search-input">
+                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+        </nav>
+
+        <div class="main anim">
+
+            <div class="main_text">
+
+                <h1>Welcome<span> Manh Food</span><br>in a Easy Way</h1>
+
+                <p>
+                    Chào mừng bạn đến với Manh FOOD – Nơi mang đến những trải nghiệm tuyệt vời và đầy hương vị! 🍹
+
+                    Tại Manh FOOD, chúng tôi cam kết mang đến cho bạn những món thức uống tươi ngon và bổ dưỡng nhất. Hãy để chúng tôi giúp bạn giải khát và tận hưởng những khoảnh khắc thư giãn tuyệt vời bên gia đình và bạn bè. Với đa dạng các loại nước ép trái cây tự nhiên, các món sinh tố mát lạnh, và những ly trà sữa đậm đà, mỗi lựa chọn đều được chế biến từ nguyên liệu tươi ngon, an toàn, mang đến sức khỏe và niềm vui cho mỗi khách hàng.
+                    
+                    
+                </p>
+
+                <a href="menu.html" class="btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+            </div>
+
+            <div class="main_image">
+                <img src="image/main_img.png">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <div class="about">
+
+        <div class="about_main">
+
+            <div class="about_image">
+                <img src="image/about.png">
+            </div>
+
+            <div class="about_text">
+
+                <h1><span>Giới</span>Thiệu</h1>
+                <h3>Tại sao lại chọn Manh FOOD?</h3>
+                <p>
+                    Tại Manh FOOD, chúng tôi không chỉ cung cấp những món ăn, thức uống tươi ngon mà còn mang đến cho bạn trải nghiệm tuyệt vời từ chất lượng cho đến dịch vụ. Chúng tôi cam kết đem đến cho bạn những sản phẩm được chế biến từ nguyên liệu tươi sạch, an toàn và giàu dinh dưỡng, với mục tiêu mang lại sức khỏe và niềm vui cho mọi khách hàng.
+                </p>
+
+                <div class="about_services">
+
+                    <div class="s_1">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <a href="#">Fast Delivery</a>
+                    </div>
+
+                    <div class="s_1">
+                        <i class="fa-brands fa-amazon-pay"></i>
+                        <a href="#">Easy Payment</a>
+                    </div>
+
+                    <div class="s_1">
+                        <i class="fa-solid fa-headset"></i>
+                        <a href="#">24 x 7 Services</a>
+                    </div>
+
+                </div>
+
+                <a href="menu.html" class="about_btn">
+                    <i class="fa-solid fa-burger"></i>Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!--Menu-->
+
+    <div class="menu">
+
+        <h1>Our<span>Menu</span></h1>
+
+        <div class="menu_box">
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_1.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Buger</h2>
+                    <p>
+                        Buger – Món cơm ướp gia vị đậm đà, kết hợp cùng thịt gà hoặc thịt cừu, mang đến hương vị tuyệt hảo
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="menu.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_2.jpg">
+                </div>
+
+                <div class="menu_text">
+
+                    
+                    <h2>Coffee Nâu</h2>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">
+                        Coffee Nâu – Tận hưởng hương vị đậm đà và mượt mà của cà phê nâu.
+                    </p>
+
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="menu.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu_card">
+
+                <div class="menu_img">
+                    <img src="image/menu_3.png">
+                </div>
+
+                <div class="menu_text">
+
+                    <h2>Pizza</h2>
+                    <p>
+                        Pizza – Đậm đà hương vị từ lớp phô mai tan chảy, tạo nên một chiếc pizza thơm lừng, hấp dẫn.
+                    </p>
+
+                    <div class="menu_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <p class="price">$100.00<sub><del>$120.00</del></sub></p>
+
+                    <a href="menu.html" class="menu_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!--Banner-->
+
+    <div class="banner">
+
+        <h1>Special Offer</h1>
+
+        <div class="banner_center">
+            <h2>50%<br><span>Off</span></h2>
+        </div>
+
+        <a href="menu.html" class="banner_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+    </div>
+
+
+
+
+    <!--Gallery-->
+
+    <div class="gallery">
+
+        <h1>Popular<span>Gallery</span></h1>
+
+        <div class="gallery_box">
+
+            <div class="gallery_image">
+                <img src="image/gallary_1.jpg">
+            </div>
+
+            <div class="gallery_image">
+                <img src="image/gallary_2.jpg">
+            </div>
+
+            <div class="gallery_image">
+                <img src="image/gallary_3.webp">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Offer-->
+
+    <div class="offer">
+
+        <div class="offer_box">
+
+            <div class="offer_card_1">
+
+                <div class="offer_img">
+                    <img src="image/offer_1.jpg">
+                </div>
+
+                <div class="offer_tag">
+
+                    <h2>Triplae Food</h2>
+                    <h1>40%</h1>
+                    <p>
+                        Nước uống có ga, với vị sảng khoái và sự tươi mới, mang đến cảm giác thư giãn cho mọi người trong mọi tình huống.
+                    </p>
+                    <a href="menu.html" class="offer_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="offer_card_2">
+
+                <div class="offer_img">
+                    <img src="image/offer_2.png">
+                </div>
+
+                <div class="offer_tag">
+
+                    <h2>Buy 2 pizza and get a <br>free Drink</h2>
+                    <p>
+                        Mua 2 chiếc pizza, nhận ngay một ly đồ uống miễn phí, mang đến bữa ăn tuyệt vời cho bạn và gia đình!
+                    </p>
+                    <a href="menu.html" class="offer_btn"><i class="fa-solid fa-burger"></i>Order Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!--Team-->
+
+    <div class="team">
+
+        <h1><span>Team</span></h1>
+
+        <div class="team_line_1"></div>
+        <div class="team_line_2"></div>
+
+        <div class="team_box">
+
+            <div class="team_card">
+
+                <div class="team_img">
+                    <img src="/image/0502.png">
+                </div>
+
+                <div class="team_tag">
+
+                    <h2>DUC MANH</h2>
+                    <p class="job">Cook</p>
+                    <p class="info">
+                        Phụ bếp – nơi bạn có thể học hỏi, trải nghiệm và đóng góp vào từng món ăn thơm ngon, đầy sáng tạo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="team_card">
+
+                <div class="team_img">
+                    <img src="image/0504(1).jpg">
+                </div>
+
+                <div class="team_tag">
+
+                    <h2>DUC MANH</h2>
+                    <p class="job">Cook</p>
+                    <p class="info">
+                        "Món ăn ngon – hương vị tuyệt vời, làm say lòng thực khách và mang lại những trải nghiệm ẩm thực khó quên."
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="team_card">
+
+                <div class="team_img">
+                    <img src="/image/0502.png">
+                </div>
+
+                <div class="team_tag">
+
+                    <h2>DUC MANH</h2>
+                    <p class="job">Cook</p>
+                    <p class="info">
+                        "Hương vị kem – sự kết hợp hoàn hảo giữa vị ngọt mát và mềm mịn, mang đến cảm giác thư giãn tuyệt vời cho mọi người."
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="team_card">
+
+                <div class="team_img">
+                    <img src="image/0504(1).jpg">
+                </div>
+
+                <div class="team_tag">
+
+                    <h2>DUC MANH</h2>
+                    <p class="job">Cook</p>
+                    <p class="info">
+                        "Mì tôm – món ăn nhanh tiện lợi, đầy đủ hương vị, mang đến sự ấm áp và thỏa mãn cho bữa ăn của bạn."
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!--Blog-->
+
+    <div class="blog">
+
+        <h1>Blog<span></span></h1>
+
+        <div class="blog_box">
+
+            <div class="blog_card">
+
+                <div class="blog_img">
+                    <img src="image/blog_1.jpeg">
+                </div>
+
+                <div class="blog_tag">
+
+                    <div class="blog_date">
+                        <p>18 May 2022<i class="fa-solid fa-calendar-days"></i></p>
+                    </div>
+
+                    <h3 class="blog_heading">
+                        Do Not Leave toko before Eating this remen
+                    </h3>
+
+                    <p class="blog_text">
+                        Đừng vội rời toko trước khi thưởng thức món ramen tuyệt hảo này – hương vị khó quên sẽ khiến bạn muốn quay lại ngay!
+                    </p>
+
+                    <hr>
+
+                    <div class="view_and_like">
+
+                        <div class="view">
+                            <p>15.3K Views</p>
+                            <p class="b_comm">786 comments</p>
+                        </div>
+
+                        <div class="like">
+                            <p>3K</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="blog_card">
+
+                <div class="blog_img">
+                    <img src="image/blog_2.jpg">
+                </div>
+
+                <div class="blog_tag">
+
+                    <div class="blog_date">
+                        <p>18 May 2022<i class="fa-solid fa-calendar-days"></i></p>
+                    </div>
+
+                    <h3 class="blog_heading">
+                        Do Not Leave toko before Eating this remen
+                    </h3>
+
+                    <p class="blog_text">
+                        Đừng vội rời toko trước khi thưởng thức món ramen tuyệt hảo này – hương vị khó quên sẽ khiến bạn muốn quay lại ngay!
+                    </p>
+
+                    <hr>
+
+                    <div class="view_and_like">
+
+                        <div class="view">
+                            <p>15.3K Views</p>
+                            <p class="b_comm">786 comments</p>
+                        </div>
+
+                        <div class="like">
+                            <p>3K</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="blog_card">
+
+                <div class="blog_img">
+                    <img src="image/blog_3.jpg">
+                </div>
+
+                <div class="blog_tag">
+
+                    <div class="blog_date">
+                        <p>18 May 2022<i class="fa-solid fa-calendar-days"></i></p>
+                    </div>
+
+                    <h3 class="blog_heading">
+                        Do Not Leave toko before Eating this remen
+                    </h3>
+
+                    <p class="blog_text">
+                        Đừng vội rời toko trước khi thưởng thức món ramen tuyệt hảo này – hương vị khó quên sẽ khiến bạn muốn quay lại ngay.
+                    </p>
+
+                    <hr>
+
+                    <div class="view_and_like">
+
+                        <div class="view">
+                            <p>15.3K Views</p>
+                            <p class="b_comm">786 comments</p>
+                        </div>
+
+                        <div class="like">
+                            <p>3K</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--Oder-->
+
+    <div class="oder">
+
+        <h1><span>Oder</span>Now</h1>
+
+        <div class="oder_main">
+
+            <div class="oder_img">
+                <img src="image/oder.png">
+            </div>
+
+            <div class="oder_form">
+
+                <h2>Home Delivery</h2>
+
+                <div class="oder_list">
+
+                    <div class="oder_left">
+
+                        <p>Full Name</p>
+                        <input type="text" placeholder="John Deo">
+
+                        <p>Number</p>
+                        <input type="number" placeholder="+94 12 345 6789">
+
+                        <p>Extra food</p>
+                        <input type="text" placeholder="with cola">
+
+                        <p>You Address</p>
+                        <textarea placeholder="Enter You Address"></textarea>
+
+                    </div>
+
+                    <div class="oder_right">
+
+                        <p>Email</p>
+                        <input type="email" placeholder="manhkaka195@gmail.com">
+
+                        <p>Food Name</p>
+                        <input type="text" placeholder="Pizza">
+
+                        <p>How Much</p>
+                        <input type="number" placeholder="3">
+
+                        <p>You Message</p>
+                        <textarea placeholder="Enter Your Message"></textarea>
+
+                    </div>
+
+                </div>
+
+                <a href="#" class="oder_btn"><i class="fa-solid fa-burger"></i>Oder Now</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <footer>
+
+        <div class="footer_main">
+    
+            <div class="footer_tag">
+    
+                <h2>Vị trí</h2>
+                <p>Hà Nội</p>
+                <p>TP. Hồ Chí Minh</p>
+                <p>Đà Nẵng</p>
+                <p>Cần Thơ</p>
+                <p>Nha Trang</p>
+    
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Liên hệ</h2>
+                <p>+84 12 3456 789</p>
+                <p>+84 25 5568 456</p>
+                <p>manhkaka195@gmail.com</p>
+    
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Dịch vụ của chúng tôi</h2>
+                <p>Giao hàng nhanh</p>
+                <p>Thanh toán dễ dàng</p>
+                <p>Hỗ trợ 24/7</p>
+    
+            </div>
+
+            <div class="footer_tag">
+                <h2>Chính sách</h2>
+                <p>Chính sách bảo mật</a></p>
+                <p>Điều khoản sử dụng</a></p>
+                <p>Chính sách đổi trả</a></p>
+            </div>
+    
+            <div class="footer_tag">
+    
+                <h2>Theo dõi chúng tôi</h2>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+    
+            </div>
+    
+    
+        </div>
+    
+        <p class="end"><strong style="font-family: Arial, Helvetica, sans-serif; font-size: 30PX;"><span><i class="fa-solid fa-face-grin"></i> 21087261_NGUYỄN ĐỨC MẠNH</span></strong> </p>
+    
+    </footer>
+    
+
+
+
+   
+    
+</body>
+</html>
