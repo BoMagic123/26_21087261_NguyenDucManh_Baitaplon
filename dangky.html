@@ -82,7 +82,7 @@
             </div>
             <div class="form-group">
                 <input type="email" id="email" class="form-control" placeholder="Email" required>
-                <div id="emailError" class="error" style="display: none;">Email không hợp lệ. Vui lòng nhập lại.</div>
+                <div id="emailError" class="error" style="display: none;">Email không hợp lệ. Vui lòng nhập lại đúng định dạng @gmail.com</div>
             </div>
             <div class="form-group">
                 <input type="password" id="password" class="form-control" placeholder="Mật khẩu" required>
@@ -94,7 +94,7 @@
             </div>
             <div class="form-group">
                 <input type="date" id="dob" class="form-control" placeholder="Ngày sinh" required>
-                <div id="dobError" class="error" style="display: none;">Bạn phải đủ 18 tuổi để đăng ký.</div>
+                <div id="dobError" class="error" style="display: none;">Bạn chưa đủ 18 tuổi để đăng ký.</div>
             </div>
             <div class="form-group">
                 <select id="province" class="form-control" required>
@@ -206,7 +206,7 @@
 
                 // Chuyển trang sau khi đăng ký thành công
                 setTimeout(function() {
-                    window.location.href = 'trangchu.html'; // Thay 'success.html' bằng trang bạn muốn chuyển tới
+                    window.location.href = 'dangnhap.html'; // Thay 'success.html' bằng trang bạn muốn chuyển tới
                 }, 3000); // 2 giây sau khi hiển thị thông tin
             }
         });

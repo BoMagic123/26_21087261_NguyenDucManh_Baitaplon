@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('./image/R.jpg'); /* Đổi thành đường dẫn ảnh của bạn */
+            background-image: url('./image/R.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -23,7 +23,7 @@
             margin-top: 50px;
         }
 
-        h2 {
+        h2, h3 {
             color: #ffd700;
             text-align: center;
             margin-bottom: 30px;
@@ -33,7 +33,7 @@
             font-weight: bold;
         }
 
-        .form-control {
+        .form-control, .form-select {
             border-radius: 5px;
             margin-bottom: 20px;
         }
@@ -51,13 +51,23 @@
             background-color: #e6c300;
         }
 
-        .form-select {
-            border-radius: 5px;
-        }
-
         .form-control:focus, .form-select:focus {
             border-color: #ffd700;
             box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-info img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         .alert-success {
@@ -66,62 +76,101 @@
             margin-top: 20px;
             font-size: 18px;
         }
+
+        .total-price {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .btn-danger {
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-danger:hover {
+            background-color: #e60000;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h2>THÔNG TIN ĐẶT HÀNG</h2>
+        <!-- Hiển thị thông tin sản phẩm -->
+        <div id="product-info" class="product-info">
+            <img id="product-image" src="" alt="Sản phẩm">
+            <div>
+                <h3 id="product-name">Sản phẩm</h3>
+                <p>Giá: <span id="product-price">$0.00</span></p>
+                <p>Số lượng: <span id="product-quantity">0</span></p>
+            </div>
+        </div>
 
-<div class="container">
-    <h2>THÔNG TIN ĐẶT HÀNG</h2>
-    <form id="customer-form" action="menu.html" method="get" onsubmit="showSuccessMessage(event)">
-        <div class="mb-3">
-            <label for="name" class="form-label">Họ và Tên</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+        <!-- Hiển thị tổng giá tiền -->
+        <div id="total-price" class="total-price">
+            Tổng giá: <span id="total-price-value">$0.00</span>
         </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Số Điện Thoại</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
-        </div>
-        <div class="mb-3">
-            <label for="address" class="form-label">Địa Chỉ Giao Hàng</label>
-            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="payment-method" class="form-label">Phương Thức Thanh Toán</label>
-            <select class="form-select" id="payment-method" name="payment-method" required>
-                <option value="cash">Thanh toán khi nhận hàng</option>
-                <option value="online">Thanh toán trực tuyến</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
-    </form>
 
-    <!-- Thông báo thành công -->
-    <div id="success-message" class="alert alert-success" role="alert">
-        Đặt hàng thành công!
+        <form id="customer-form" action="#" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Họ và Tên</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Số Điện Thoại</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Địa Chỉ Giao Hàng</label>
+                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="payment-method" class="form-label">Phương Thức Thanh Toán</label>
+                <select class="form-select" id="payment-method" name="payment-method" required>
+                    <option value="cash">Thanh toán khi nhận hàng</option>
+                    <option value="online">Thanh toán trực tuyến</option>
+                </select>
+            </div>
+
+            <!-- Nút gửi thông tin -->
+            <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
+
+            <!-- Nút hủy yêu cầu -->
+            <button type="button" id="cancel-request" class="btn btn-danger">Hủy Yêu Cầu</button>
+        </form>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lấy thông tin từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('name') || 'Sản phẩm';
+        const productPrice = parseFloat(urlParams.get('price') || '0.00');
+        const productImage = urlParams.get('image') || '';
+        const productQuantity = parseInt(urlParams.get('quantity') || '1');
 
-<script>
-    // Hàm hiển thị thông báo thành công và chuyển hướng sau 3 giây
-    function showSuccessMessage(event) {
-        event.preventDefault(); // Ngừng gửi form để hiển thị thông báo trước
+        // Hiển thị thông tin sản phẩm
+        document.getElementById('product-name').textContent = productName;
+        document.getElementById('product-price').textContent = `$${productPrice.toFixed(2)}`;
+        document.getElementById('product-image').src = productImage;
+        document.getElementById('product-quantity').textContent = productQuantity;
 
-        // Hiển thị thông báo thành công
-        var successMessage = document.getElementById("success-message");
-        successMessage.style.display = "block";
+        // Tính tổng giá tiền
+        const totalPrice = productPrice * productQuantity;
+        document.getElementById('total-price-value').textContent = `$${totalPrice.toFixed(2)}`;
 
-        // Sau 3 giây, chuyển hướng về trang menu.html
-        setTimeout(function() {
-            window.location.href = "sanpham.html"; // Chuyển hướng tới menu.html
-        }, 3000);
-    }
-</script>
-
+        // Xử lý hủy yêu cầu
+        document.getElementById('cancel-request').addEventListener('click', function() {
+            if (confirm('Bạn có chắc chắn muốn hủy yêu cầu này?')) {
+                // Thực hiện hủy yêu cầu, ví dụ quay lại trang trước
+                window.location.href = 'menu1.html'; // Hoặc trang bạn muốn quay lại
+            }
+        });
+    </script>
 </body>
 </html>
